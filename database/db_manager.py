@@ -3,7 +3,7 @@ import json
 import os
 
 DB_DIR = os.path.dirname(os.path.abspath(__file__))
-DB_PATH = os.path.join(DB_DIR, 'database.db')
+DB_PATH = '/tmp/database.db'
 
 def get_db():
     conn = sqlite3.connect(DB_PATH)
