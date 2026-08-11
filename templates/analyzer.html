@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threat Analyzer | ScamShield AI</title>
+    <meta name="description" content="Analyze suspicious financial messages, phishing emails, URLs, and e-commerce deals for scam threat indicators.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="/" class="brand-logo">
+                <div class="shield-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <span>ScamShield <span class="brand-badge">AI</span></span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="/analyzer" class="active"><i class="fa-solid fa-magnifying-glass-shield"></i> Scan</a></li>
+                    <li><a href="/#how-it-works"><i class="fa-solid fa-gears"></i> How It Works</a></li>
+                    <li><a href="/guide"><i class="fa-solid fa-book-bookmark"></i> Safety Guide</a></li>
+                    <li><a href="/dashboard"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Page Header -->
+        <div style="margin-bottom: 2rem; text-align: center;">
+            <h1 style="font-family:var(--font-heading); font-size:2.2rem; font-weight:800;">Content Risk Inspector</h1>
+            <p style="color:var(--text-muted); font-size:1.05rem; max-width:600px; margin:0.4rem auto 0 auto;">Select the type of content below to evaluate potential phishing, fake offer, or malicious URL indicators.</p>
+        </div>
+
+        <!-- Scanner Card Component (PAGE 2) -->
+        <div class="scanner-card">
+            
+            <!-- Type Switcher Tabs -->
+            <div class="scanner-tabs">
+                <button type="button" class="tab-btn active" data-type="message">
+                    <i class="fa-solid fa-envelope-open-text"></i> Message / Email
+                </button>
+                <button type="button" class="tab-btn" data-type="url">
+                    <i class="fa-solid fa-link"></i> Suspicious URL
+                </button>
+                <button type="button" class="tab-btn" data-type="ecommerce">
+                    <i class="fa-solid fa-store"></i> E-Commerce Content
+                </button>
+            </div>
+
+            <!-- Input Form -->
+            <form id="scan-form">
+                <div class="form-group">
+                    <label for="scan-input" class="form-label" id="input-label">Paste Message, Email Content, or Social Media Text</label>
+                    <textarea id="scan-input" class="form-control" rows="5" placeholder="e.g., URGENT: Your PayPal account has been suspended due to unauthorized access! Click http://paypa1-security-verification.top/login immediately within 24 hours to restore access..."></textarea>
+                    
+                    <div class="counter-row" id="char-count-wrapper">
+                        <span><i class="fa-regular fa-lightbulb"></i> Tip: Include headers, links, and exact text for best results.</span>
+                        <span><span id="char-count">0</span> characters</span>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="clearScanForm()">
+                        <i class="fa-solid fa-rotate-left"></i> Clear
+                    </button>
+                    <button type="submit" class="btn btn-primary" id="analyze-btn">
+                        <span id="btn-text"><i class="fa-solid fa-shield-virus"></i> Analyze Content</span>
+                        <span id="btn-spinner" style="display:none;"><i class="fa-solid fa-circle-notch fa-spin"></i> Inspecting...</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Visual Result UI Component (PAGE 3 - Initially Hidden or Triggered via JS) -->
+        <div id="result-ui-container" class="result-card" style="display: none;">
+            
+            <div class="result-header">
+                <div>
+                    <h3 class="result-title"><i class="fa-solid fa-square-poll-vertical"></i> Threat Evaluation Report</h3>
+                    <span style="font-size:0.82rem; color:var(--text-muted);">AI-Assisted Security Assessment</span>
+                </div>
+                <div id="result-badge" class="risk-badge badge-high">HIGH RISK</div>
+            </div>
+
+            <div class="result-grid">
+                
+                <!-- Score & Level Gauge -->
+                <div class="score-box">
+                    <div class="score-circle" id="score-circle">
+                        <span id="result-score">85</span>
+                    </div>
+                    <span class="score-label">Risk Score (0 - 100)</span>
+                    <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.5rem; line-height:1.3;">Higher score indicates multiple suspicious threat patterns.</p>
+                </div>
+
+                <!-- Explanation & Evidence Column -->
+                <div>
+                    
+                    <!-- Highly Visible "Why was this flagged?" Box -->
+                    <div class="why-flagged-box">
+                        <div class="why-title">
+                            <i class="fa-solid fa-triangle-exclamation"></i> Why Was This Flagged?
+                        </div>
+                        <p id="why-content" style="font-size:0.95rem; color:var(--text-main); line-height:1.5;">
+                            Contains artificial urgency ("suspended within 24 hours"), credential verification traps, and phishing link indicators.
+                        </p>
+                        
+                        <div class="indicator-tags" id="evidence-tags">
+                            <span class="tag">Artificial Urgency Trigger</span>
+                            <span class="tag">Credential Harvesting Pattern</span>
+                            <span class="tag">Impersonation Phrasing</span>
+                            <span class="tag">Embedded Link Flag</span>
+                        </div>
+                    </div>
+
+                    <!-- Recommended Next Actions -->
+                    <div class="recs-box">
+                        <h4 style="font-size:0.95rem; font-weight:700; color:var(--text-main);"><i class="fa-solid fa-list-check"></i> Recommended Next Actions:</h4>
+                        <ul class="recs-list" id="recs-list">
+                            <li><i class="fa-solid fa-ban" style="color:var(--status-high-risk);"></i> Do NOT reply or click any links embedded in the message.</li>
+                            <li><i class="fa-solid fa-building-columns" style="color:var(--accent-gold);"></i> Contact your institution directly using the phone number on your bank card.</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Disclaimer Box -->
+            <div class="disclaimer-box">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                    <strong style="color:var(--text-main);">AI Uncertainty & Risk Disclaimer:</strong>
+                    This output is an automated threat indicator assessment based on statistical risk signals. It provides clear guidance to assist human judgment, but does not guarantee absolute safety or fraud confirmation.
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <strong>ScamShield AI</strong> &mdash; VibeForge 1.0 Hackathon
+            </div>
+            <div>
+                Built with clean HTML, CSS & Vanilla JS for Fintech Security Education.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

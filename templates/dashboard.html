@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard | ScamShield AI</title>
+    <meta name="description" content="View overall threat scan history metrics, risk distribution, and evaluated financial content logs.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="/" class="brand-logo">
+                <div class="shield-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <span>ScamShield <span class="brand-badge">AI</span></span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="/analyzer"><i class="fa-solid fa-magnifying-glass-shield"></i> Scan</a></li>
+                    <li><a href="/#how-it-works"><i class="fa-solid fa-gears"></i> How It Works</a></li>
+                    <li><a href="/guide"><i class="fa-solid fa-book-bookmark"></i> Safety Guide</a></li>
+                    <li><a href="/dashboard" class="active"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Header -->
+        <div style="margin-bottom: 2rem; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem;">
+            <div>
+                <h1 style="font-family:var(--font-heading); font-size:2.2rem; font-weight:800;">Scan Analytics & History</h1>
+                <p style="color:var(--text-muted); font-size:1rem; margin-top:0.3rem;">Overview of evaluated financial messages, URLs, and e-commerce offer logs.</p>
+            </div>
+            <a href="/analyzer" class="btn btn-primary"><i class="fa-solid fa-plus"></i> New Scan</a>
+        </div>
+
+        <!-- Metric Stat Cards Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label"><i class="fa-solid fa-layer-group"></i> Total Scans</div>
+                <div class="stat-number">42</div>
+                <span style="font-size:0.78rem; color:var(--text-dim);">Evaluated across all modes</span>
+            </div>
+
+            <div class="stat-card" style="border-left: 4px solid var(--status-high-risk);">
+                <div class="stat-label" style="color:var(--status-high-risk);"><i class="fa-solid fa-triangle-exclamation"></i> High Risk Scans</div>
+                <div class="stat-number" style="color:var(--status-high-risk);">18</div>
+                <span style="font-size:0.78rem; color:var(--text-dim);">Critical threat markers detected</span>
+            </div>
+
+            <div class="stat-card" style="border-left: 4px solid var(--status-suspicious);">
+                <div class="stat-label" style="color:var(--status-suspicious);"><i class="fa-solid fa-circle-exclamation"></i> Suspicious Scans</div>
+                <div class="stat-number" style="color:var(--status-suspicious);">15</div>
+                <span style="font-size:0.78rem; color:var(--text-dim);">Moderate caution advised</span>
+            </div>
+
+            <div class="stat-card" style="border-left: 4px solid var(--status-safe);">
+                <div class="stat-label" style="color:var(--status-safe);"><i class="fa-solid fa-circle-check"></i> Low Risk / Safe</div>
+                <div class="stat-number" style="color:var(--status-safe);">9</div>
+                <span style="font-size:0.78rem; color:var(--text-dim);">Standard low-risk flags</span>
+            </div>
+        </div>
+
+        <!-- Risk Distribution Bar -->
+        <div class="card" style="margin-bottom: 2.5rem;">
+            <h3 style="font-size:1.1rem; margin-bottom:1rem;"><i class="fa-solid fa-chart-pie"></i> Risk Distribution Ratio</h3>
+            <div style="height: 14px; width:100%; background:rgba(255,255,255,0.06); border-radius:var(--radius-full); overflow:hidden; display:flex;">
+                <div style="width: 43%; background:var(--status-high-risk);" title="43% High Risk"></div>
+                <div style="width: 36%; background:var(--status-suspicious);" title="36% Suspicious"></div>
+                <div style="width: 21%; background:var(--status-safe);" title="21% Safe"></div>
+            </div>
+            <div style="display:flex; gap:1.5rem; margin-top:0.8rem; font-size:0.85rem; color:var(--text-muted);">
+                <span><i class="fa-solid fa-square" style="color:var(--status-high-risk);"></i> High Risk (43%)</span>
+                <span><i class="fa-solid fa-square" style="color:var(--status-suspicious);"></i> Suspicious (36%)</span>
+                <span><i class="fa-solid fa-square" style="color:var(--status-safe);"></i> Low Risk (21%)</span>
+            </div>
+        </div>
+
+        <!-- Recent Scans Table Container -->
+        <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem; flex-wrap:wrap; gap:1rem;">
+                <h3 style="font-size:1.2rem;"><i class="fa-solid fa-clock-rotate-left"></i> Evaluated Scan Records</h3>
+                
+                <div style="position:relative; min-width:250px;">
+                    <input type="text" id="dash-search" class="form-control" placeholder="Search scan logs..." style="padding-left:2.4rem; font-size:0.88rem;">
+                    <i class="fa-solid fa-magnifying-glass" style="position:absolute; left:0.9rem; top:50%; transform:translateY(-50%); color:var(--text-dim);"></i>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Scan Type</th>
+                            <th>Input Summary</th>
+                            <th>Timestamp</th>
+                            <th>Score</th>
+                            <th>Risk Category</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scans-table-body">
+                        <tr>
+                            <td><span class="tag">Message</span></td>
+                            <td>URGENT: Your PayPal account has been suspended...</td>
+                            <td>2026-08-08 21:10</td>
+                            <td><strong>90 / 100</strong></td>
+                            <td><span class="risk-badge badge-high">HIGH RISK</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="tag">URL</span></td>
+                            <td>http://paypa1-account-security-update.top/login</td>
+                            <td>2026-08-08 20:45</td>
+                            <td><strong>85 / 100</strong></td>
+                            <td><span class="risk-badge badge-high">HIGH RISK</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="tag">E-Commerce</span></td>
+                            <td>iPhone 15 Pro Max sealed for $150 (Zelle only)...</td>
+                            <td>2026-08-08 19:30</td>
+                            <td><strong>72 / 100</strong></td>
+                            <td><span class="risk-badge badge-suspicious">SUSPICIOUS</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="tag">Message</span></td>
+                            <td>CONGRATULATIONS! You won 1.5 Bitcoin in lottery...</td>
+                            <td>2026-08-08 18:15</td>
+                            <td><strong>95 / 100</strong></td>
+                            <td><span class="risk-badge badge-high">HIGH RISK</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="tag">Message</span></td>
+                            <td>Your monthly account statement is available in portal...</td>
+                            <td>2026-08-08 17:00</td>
+                            <td><strong>10 / 100</strong></td>
+                            <td><span class="risk-badge badge-safe">LOW RISK</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <strong>ScamShield AI</strong> &mdash; VibeForge 1.0 Hackathon
+            </div>
+            <div>
+                Analytics Dashboard for Financial Threat Awareness.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

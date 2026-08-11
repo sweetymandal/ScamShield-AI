@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety Guide | ScamShield AI</title>
+    <meta name="description" content="Learn how to identify phishing messages, fake e-commerce offers, suspicious URLs, and payment fraud.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="/" class="brand-logo">
+                <div class="shield-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <span>ScamShield <span class="brand-badge">AI</span></span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="/analyzer"><i class="fa-solid fa-magnifying-glass-shield"></i> Scan</a></li>
+                    <li><a href="/#how-it-works"><i class="fa-solid fa-gears"></i> How It Works</a></li>
+                    <li><a href="/guide" class="active"><i class="fa-solid fa-book-bookmark"></i> Safety Guide</a></li>
+                    <li><a href="/dashboard"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Page Header -->
+        <div style="margin-bottom: 2.5rem; text-align: center;">
+            <h1 style="font-family:var(--font-heading); font-size:2.2rem; font-weight:800;">Digital Threat Defense Guide</h1>
+            <p style="color:var(--text-muted); font-size:1.05rem; max-width:650px; margin:0.4rem auto 0 auto;">Master the key warning signs of modern financial phishing, e-commerce deception, and social engineering traps.</p>
+        </div>
+
+        <!-- Educational Cards Grid -->
+        <div class="card-grid">
+
+            <div class="card">
+                <div class="card-icon" style="background:rgba(239, 68, 68, 0.1); color:var(--status-high-risk);"><i class="fa-solid fa-hourglass-half"></i></div>
+                <h3>1. Artificial Urgency & Panic</h3>
+                <p>Scammers use high-pressure deadlines ("Account suspended in 1 hour!", "Immediate legal action!") so victims act emotionally without verifying.</p>
+                <div style="margin-top:1rem; font-size:0.85rem; color:var(--accent-gold);"><strong>Defense Tip:</strong> Always pause. Legitimate institutions give reasonable notice and never demand panic action.</div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon" style="background:rgba(245, 158, 11, 0.1); color:var(--accent-gold);"><i class="fa-solid fa-key"></i></div>
+                <h3>2. OTP & 2FA Passcode Safety</h3>
+                <p>One-Time Passcodes (OTP) sent to your mobile phone are master key access tokens to your bank and social accounts.</p>
+                <div style="margin-top:1rem; font-size:0.85rem; color:var(--accent-gold);"><strong>Defense Tip:</strong> Never share an OTP with anyone over the phone or text—not even a customer support agent.</div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon" style="background:rgba(0, 242, 254, 0.1); color:var(--accent-cyan);"><i class="fa-solid fa-masks-theater"></i></div>
+                <h3>3. Lookalike Web Addresses</h3>
+                <p>Phishing links use visual character tricks (`paypa1.com` instead of `paypal.com` or `apple-id-security.xyz`).</p>
+                <div style="margin-top:1rem; font-size:0.85rem; color:var(--accent-gold);"><strong>Defense Tip:</strong> Inspect the full domain in your address bar and ensure it starts with HTTPS on official company domains.</div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon" style="background:rgba(139, 92, 246, 0.1); color:#8b5cf6;"><i class="fa-solid fa-money-bill-transfer"></i></div>
+                <h3>4. Irreversible Payment Demands</h3>
+                <p>Peer-to-Peer money transfers (Zelle, Venmo, Wire Transfers, Gift Cards, Crypto) carry zero buyer protection if you are defrauded.</p>
+                <div style="margin-top:1rem; font-size:0.85rem; color:var(--accent-gold);"><strong>Defense Tip:</strong> Use credit cards or buyer-protected services (like PayPal Goods & Services) when purchasing from unknown sellers.</div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon" style="background:rgba(249, 115, 22, 0.1); color:var(--status-suspicious);"><i class="fa-solid fa-gift"></i></div>
+                <h3>5. Unrealistic E-Commerce Deals</h3>
+                <p>High-end electronics or luxury fashion listed for 80% to 90% below market value on social media ads are almost always fake storefronts.</p>
+                <div style="margin-top:1rem; font-size:0.85rem; color:var(--accent-gold);"><strong>Defense Tip:</strong> Research seller domain age and independent reviews before placing orders.</div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon" style="background:rgba(16, 185, 129, 0.1); color:var(--status-safe);"><i class="fa-solid fa-user-shield"></i></div>
+                <h3>6. What To Do If Targeted</h3>
+                <p>If you accidentally clicked a suspicious link or shared credentials:</p>
+                <ul style="margin-top:0.5rem; font-size:0.85rem; color:var(--text-muted); list-style:inside;">
+                    <li>Change account passwords immediately.</li>
+                    <li>Freeze affected bank cards or call your bank directly.</li>
+                    <li>Enable 2-Factor Authentication across all accounts.</li>
+                    <li>Report the phishing message to official authorities.</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <strong>ScamShield AI</strong> &mdash; VibeForge 1.0 Hackathon
+            </div>
+            <div>
+                Promoting Digital Financial Literacy & Cyber Defense Awareness.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

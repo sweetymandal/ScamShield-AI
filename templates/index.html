@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScamShield AI | Think Before You Trust</title>
+    <meta name="description" content="AI-assisted risk assessment tool helping online users detect suspicious financial messages, phishing emails, malicious URLs, and deceptive e-commerce offers.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="/" class="brand-logo">
+                <div class="shield-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <span>ScamShield <span class="brand-badge">AI</span></span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="/analyzer"><i class="fa-solid fa-magnifying-glass-shield"></i> Scan</a></li>
+                    <li><a href="#how-it-works"><i class="fa-solid fa-gears"></i> How It Works</a></li>
+                    <li><a href="/guide"><i class="fa-solid fa-book-bookmark"></i> Safety Guide</a></li>
+                    <li><a href="/dashboard"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+                    <li><a href="/analyzer" class="nav-cta"><i class="fa-solid fa-bolt"></i> Analyze Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-tag">
+                <i class="fa-solid fa-shield-cat"></i> AI-POWERED FINTECH & E-COMMERCE SECURITY
+            </div>
+            <h1 class="hero-title">Think Before You Trust.</h1>
+            <p class="hero-sub">
+                Every day, online users face deceptive phishing messages, fake bank alerts, unverified store links, and high-risk transfer demands. ScamShield AI evaluates threat indicators and explains the warning signs so you can make informed decisions.
+            </p>
+            <div class="hero-actions">
+                <a href="/analyzer" class="btn btn-primary"><i class="fa-solid fa-shield-virus"></i> Analyze Content Now</a>
+                <a href="#how-it-works" class="btn btn-secondary"><i class="fa-solid fa-circle-info"></i> How It Works</a>
+            </div>
+        </section>
+
+        <!-- Trust / Safety Visual Flow -->
+        <section class="pipeline-container">
+            <h2 class="section-title">Transparent Safety Assessment Pipeline</h2>
+            <p class="section-desc">Understand how content moves from raw text to explainable security recommendations.</p>
+
+            <div class="pipeline-steps">
+                <div class="pipeline-step">
+                    <span class="step-num">1</span>
+                    <h3>Raw Input</h3>
+                    <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.3rem;">Paste SMS, email, URL, or product offer</p>
+                </div>
+                <div class="pipeline-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+
+                <div class="pipeline-step">
+                    <span class="step-num">2</span>
+                    <h3>AI Inspection</h3>
+                    <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.3rem;">Evaluates urgency, domain & payment patterns</p>
+                </div>
+                <div class="pipeline-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+
+                <div class="pipeline-step">
+                    <span class="step-num">3</span>
+                    <h3>Risk Assessment</h3>
+                    <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.3rem;">Generates 0–100 Risk Score & Level</p>
+                </div>
+                <div class="pipeline-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+
+                <div class="pipeline-step">
+                    <span class="step-num">4</span>
+                    <h3>Safety Guidance</h3>
+                    <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.3rem;">Clear "Why Flagged" report & action steps</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Real-World Problem Section -->
+        <section style="margin-bottom: 4rem;">
+            <h2 class="section-title">The Growing Problem in Digital Finance</h2>
+            <p class="section-desc">Modern digital scams don't look like obvious spam anymore. They exploit trust and urgency.</p>
+
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-user-ninja"></i></div>
+                    <h3>Sophisticated Phishing</h3>
+                    <p>Attackers craft convincing impersonation emails pretending to be your bank or shipping courier to harvest login credentials.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-credit-card"></i></div>
+                    <h3>Fraudulent Payment Demands</h3>
+                    <p>Scammers insist on non-refundable payment methods like Zelle, Venmo, Wire Transfer, or Gift Cards before sending items.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-link-slash"></i></div>
+                    <h3>Deceptive Store URLs</h3>
+                    <p>Lookalike domains (e.g. <code>paypa1.com</code> or <code>amazon-deals.xyz</code>) fool buyers into submitting credit card details.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+                    <h3>Fake E-Commerce Deals</h3>
+                    <p>Unrealistic discounts (90% off trending tech) posted on social media storefronts designed solely to take payments without delivering products.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Features Section -->
+        <section style="margin-bottom: 4rem;">
+            <h2 class="section-title">Key Capabilities</h2>
+            <p class="section-desc">Designed specifically for financial communications and e-commerce security.</p>
+
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                    <h3>Message & Email Analyzer</h3>
+                    <p>Scans text messages, SMS alerts, and emails for pressure language, urgency triggers, and credential harvesting hooks.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-globe"></i></div>
+                    <h3>Suspicious URL Inspector</h3>
+                    <p>Checks domain structures, TLD risk profiles, character tricks, and protocol security before you click.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-store"></i></div>
+                    <h3>E-Commerce Risk Assessment</h3>
+                    <p>Evaluates product offer texts, buyer/seller communications, and suspicious price drops for fraud markers.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-circle-nodes"></i></div>
+                    <h3>Explainable Assessment</h3>
+                    <p>Instead of just a score, you get a detailed breakdown of <em>why</em> specific indicators triggered risk warnings.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-user-shield"></i></div>
+                    <h3>Safety Action Advice</h3>
+                    <p>Practical, actionable security steps to protect your personal funds, accounts, and identity immediately.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>Scan History Log</h3>
+                    <p>Keep track of past evaluations to monitor recurring threat patterns targeting your personal accounts.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5-Step How It Works Section -->
+        <section id="how-it-works" style="margin-bottom: 4rem;">
+            <h2 class="section-title">How It Works in 5 Easy Steps</h2>
+            <p class="section-desc">Designed to be simple, accessible, and fast for any online user.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem;">
+                <div class="card" style="text-align: center;">
+                    <div class="step-num" style="background:var(--accent-gold); color:#000; width:32px; height:32px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-weight:800; margin-bottom:0.75rem;">1</div>
+                    <h4>Submit Content</h4>
+                    <p style="font-size:0.88rem; margin-top:0.4rem;">Paste suspicious text message, link, or product listing.</p>
+                </div>
+
+                <div class="card" style="text-align: center;">
+                    <div class="step-num" style="background:var(--accent-gold); color:#000; width:32px; height:32px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-weight:800; margin-bottom:0.75rem;">2</div>
+                    <h4>AI Inspection</h4>
+                    <p style="font-size:0.88rem; margin-top:0.4rem;">ScamShield checks urgency words, domain tricks, and payment patterns.</p>
+                </div>
+
+                <div class="card" style="text-align: center;">
+                    <div class="step-num" style="background:var(--accent-gold); color:#000; width:32px; height:32px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-weight:800; margin-bottom:0.75rem;">3</div>
+                    <h4>Risk Score</h4>
+                    <p style="font-size:0.88rem; margin-top:0.4rem;">Receive an intuitive 0–100 risk score and risk category.</p>
+                </div>
+
+                <div class="card" style="text-align: center;">
+                    <div class="step-num" style="background:var(--accent-gold); color:#000; width:32px; height:32px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-weight:800; margin-bottom:0.75rem;">4</div>
+                    <h4>Understand Why</h4>
+                    <p style="font-size:0.88rem; margin-top:0.4rem;">Review clear bullet points detailing flagged threat indicators.</p>
+                </div>
+
+                <div class="card" style="text-align: center;">
+                    <div class="step-num" style="background:var(--accent-gold); color:#000; width:32px; height:32px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-weight:800; margin-bottom:0.75rem;">5</div>
+                    <h4>Take Safer Action</h4>
+                    <p style="font-size:0.88rem; margin-top:0.4rem;">Follow recommended next steps to avoid financial loss.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Safety Awareness Banner -->
+        <section class="disclaimer-box" style="margin-bottom: 3rem;">
+            <i class="fa-solid fa-triangle-exclamation" style="font-size: 1.4rem;"></i>
+            <div>
+                <strong style="color:var(--text-main); font-size:0.95rem;">AI Risk Assessment Disclaimer:</strong>
+                <p style="margin-top:0.25rem;">
+                    ScamShield AI provides automated risk evaluations based on digital threat indicators. It provides clear explanations to help users assess risk, but cannot guarantee that any message or site is 100% genuine or 100% fraudulent. Always double-check sensitive financial requests directly with verified institutions.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <strong>ScamShield AI</strong> &mdash; VibeForge 1.0 Hackathon (Topic: AI in Finance & E-Commerce)
+            </div>
+            <div>
+                Empowering users to evaluate digital financial content with explainable AI risk assessments.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
